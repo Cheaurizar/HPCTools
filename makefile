@@ -1,6 +1,12 @@
 # Default Lapacke: Openblas at CESGA
 LDLIBS=-lopenblas
 
+CC = gcc-10.1.0
+#CFLAGS = -Ofast -ftree-vectorize
+CFLAGS = -O3 -ftree-vectorize -fopt-info-vec-all
+#CFLAGS = -O2 -fno-tree-vectorize
+#CFLAGS = -O0
+
 # Other systems (my Debian boxes, for example)
 #LDLIBS=-llapacke
 
@@ -12,6 +18,6 @@ LDLIBS=-lopenblas
 #LDLIBS=-qmkl=sequential -lmkl_intel_lp64
 
 dgesv: dgesv.o timer.o main.o
-
+	$(CC) $(CFLAGS) $^ -o $@ $(LDLIBS)
 clean:
 	$(RM) dgesv *.o *~

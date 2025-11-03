@@ -8,7 +8,7 @@
 // Solve A * X = B using Gauss-Jordan elimination
 // A: n x n matrix 
 // B: n x nrhs matrix 
-int my_dgesv(int n, int nrhs, double *a, double *b) {
+int my_dgesv(int n, int nrhs, double *restrict a, double *restrict b) {
     int i, j, k, col;
 
     for (k = 0; k < n; k++) {
