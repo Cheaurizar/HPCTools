@@ -1,4 +1,4 @@
-Cl√ment Cros, Olivier Tamon
+Cl√©ment Cros, Olivier Tamon
 
 gcc-8.4.0
 | Matrix size | O0        | O2-novec  | O3-vec    | Ofast-vec | Ref |
